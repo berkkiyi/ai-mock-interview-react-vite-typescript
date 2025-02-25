@@ -30,6 +30,7 @@
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -67,9 +68,7 @@
   }
   .text-outline {
     color: white;
-    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.6),
-      /* Top-left */ 1px -1px 0 rgba(0, 0, 0, 0.6),
-      /* Top-right */ -1px 1px 0 rgba(0, 0, 0, 0.6),
-      /* Bottom-left */ 1px 1px 0 rgba(0, 0, 0, 0.6); /* Bottom-right */
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.6), 1px -1px 0 rgba(0, 0, 0, 0.6),
+      -1px 1px 0 rgba(0, 0, 0, 0.6), 1px 1px 0 rgba(0, 0, 0, 0.6);
   }
 }

@@ -4,7 +4,7 @@ import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react"; // Import
 import { Link } from "react-router-dom";
 
 import { MainRoutes } from "@/lib/helpers";
-import Container from "@/components/container";
+import Container from "./container";
 
 interface SocialLinkProps {
   href: string;
@@ -64,10 +64,9 @@ export const Footer = () => {
           <div>
             <h3 className="font-bold text-lg mb-4">About Us</h3>
             <p>
-              We are here to support you in reaching your full potential with
-              the help of our advanced AI-driven tools. Our platform offers a
-              diverse range of resources to sharpen your interview skills and
-              maximize your chances of achieving success.
+              We are committed to helping you unlock your full potential with
+              AI-powered tools. Our platform offers a wide range of resources to
+              improve your interview skills and chances of success.
             </p>
           </div>
 
@@ -90,7 +89,7 @@ export const Footer = () => {
           {/* Fourth Column: Address and Social Media */}
           <div>
             <h3 className="font-bold text-lg mb-4">Contact Us</h3>
-            <p className="mb-4">Turkey</p>
+            <p className="mb-4">123 AI Street, Tech City, 12345</p>
             <div className="flex gap-4">
               <SocialLink
                 href="https://facebook.com"
