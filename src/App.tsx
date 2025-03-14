@@ -9,6 +9,8 @@ import MainLayouts from "./layouts/main-layout";
 import Generate from "./components/generate";
 import Dashboard from "./routes/dashboard";
 import CreateEditPage from "./routes/create-edit-page";
+import VideoInterviewPage from "./routes/video-interview-page";
+import AnalysisResultsPage from "./routes/analysis-routes-page"; // Yeni sayfa
 
 const App = () => {
   return (
@@ -19,13 +21,13 @@ const App = () => {
           <Route index element={<HomePage />} />
         </Route>
 
-        {/*Authentication layout */}
+        {/* Authentication layout */}
         <Route element={<AuthenticationLayout />}>
           <Route path="/signin/*" element={<SignInPage />} />
           <Route path="/signup/*" element={<SignUpPage />} />
         </Route>
 
-        {/* Protected routes*/}
+        {/* Protected routes */}
         <Route
           element={
             <ProtectRoutes>
@@ -33,11 +35,17 @@ const App = () => {
             </ProtectRoutes>
           }
         >
-          {/* add all the protected routes*/}
+          {/* add all the protected routes */}
           <Route element={<Generate />} path="/generate">
             <Route index element={<Dashboard />} />
             <Route path=":interviewId" element={<CreateEditPage />} />
           </Route>
+          <Route path="/video-interview" element={<VideoInterviewPage />} />
+          <Route
+            path="/analysis-results"
+            element={<AnalysisResultsPage />}
+          />{" "}
+          {/* Yeni sayfa */}
         </Route>
       </Routes>
     </Router>

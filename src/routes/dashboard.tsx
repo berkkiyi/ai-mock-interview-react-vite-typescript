@@ -1,4 +1,5 @@
 import Heading from "@/components/heading";
+import InterviewPin from "@/components/pin";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -73,10 +74,32 @@ const Dashboard = () => {
           ))
         ) : interviews.length > 0 ? (
           interviews.map((interview) => (
-            <p key={interview.id}>{interview.position}</p>
+            <InterviewPin key={interview.id} interview={interview} />
           ))
         ) : (
-          <div></div>
+          <div className="md:col-span-3 w-full flex flex-grow items-center justify-center h-96 flex-col">
+            <img
+              src="/assets/svg/not-found.svg"
+              className="w-44 h-44 object-contain"
+              alt=""
+            />
+
+            <h2 className="text-lg font-semibold text-muted-foreground">
+              No Data Found
+            </h2>
+
+            <p className="w-full md:w-96 text-center text-sm text-neutral-400 mt-4">
+              There is no available data to show. Please add some new mock
+              interviews
+            </p>
+
+            <Link to={"/generate/create"} className="mt-4">
+              <Button size={"sm"}>
+                <Plus className="min-w-5 min-h-5 mr-1" />
+                Add New
+              </Button>
+            </Link>
+          </div>
         )}
       </div>
     </>
