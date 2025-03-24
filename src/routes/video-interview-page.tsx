@@ -123,17 +123,12 @@ export default function VideoInterviewPage() {
     setIsSaving(true);
 
     try {
-      // Doğru cevap
-      const correctAnswer =
-        "Python is a versatile language widely used in developing large language models (LLMs) due to its simplicity and extensive libraries like TensorFlow and PyTorch. Its strengths include ease of use, a large community, and robust support for machine learning frameworks. However, Python can be slower compared to lower-level languages like C++ for certain tasks, which is a limitation when working with large-scale models.";
-
       // Backend'e analiz isteği gönder
       const response = await fetch("http://localhost:5000/analyze", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          text: userAnswer,
-          correct_answer: correctAnswer, // Doğru cevap
+          text: userAnswer, // Kullanıcının cevabı
         }),
       });
 
@@ -144,7 +139,7 @@ export default function VideoInterviewPage() {
         mockIdRef: "mock-interview-id", // Örnek bir ID
         question:
           "Describe your experience with Python, focusing on its strengths and weaknesses in the context of developing LLMs.", // Soru metni
-        correct_ans: correctAnswer, // Doğru cevap
+        correct_ans: analysis.correct_answer, // Dinamik olarak oluşturulan doğru cevap
         user_ans: userAnswer,
         feedback: analysis.sentiment, // Duygu analizi sonucu
         rating: analysis.similarity, // Metin benzerliği sonucu
