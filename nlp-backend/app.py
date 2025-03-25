@@ -11,7 +11,7 @@ app = Flask(__name__)
 CORS(app)
 
 # OpenAI istemcisini oluşturun
-client = OpenAI(api_key="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")
+client = OpenAI(api_key="Here is your OpenAI Key...")
 
 # Spacy modelini yükle
 nlp = spacy.load("en_core_web_sm")
