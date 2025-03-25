@@ -6,7 +6,6 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { db } from "@/config/firebase.config";
 import { Interview } from "@/types";
 import { useAuth } from "@clerk/clerk-react";
-import { error } from "console";
 import { collection, onSnapshot, query, where } from "firebase/firestore";
 import { Plus } from "lucide-react";
 import { useEffect, useState } from "react";

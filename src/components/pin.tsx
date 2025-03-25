@@ -1,20 +1,16 @@
 import {
   Card,
-  CardContent,
   CardDescription,
   CardFooter,
-  CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 
 import { Interview } from "@/types";
-import { useAuth } from "@clerk/clerk-react";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Badge } from "./ui/badge";
 import { cn } from "@/lib/utils";
 import { TooltipButton } from "./tooltip-button";
-import { Eye, Newspaper, Pencil, Sparkles } from "lucide-react";
+import { Eye, Newspaper, Sparkles } from "lucide-react";
 
 interface InterviewPinProps {
   interview: Interview;
@@ -23,9 +19,6 @@ interface InterviewPinProps {
 
 const InterviewPin = ({ interview, onMockPage = false }: InterviewPinProps) => {
   const navigate = useNavigate();
-  const [loading, setloading] = useState(false);
-
-  const { userId } = useAuth();
 
   return (
     <Card className="p-4 rounded-md shadow-none hover:shadow-md shadow-gray-100 cursor-pointer transition-all space-y-4">
@@ -89,7 +82,7 @@ const InterviewPin = ({ interview, onMockPage = false }: InterviewPinProps) => {
             <TooltipButton
               content="Start"
               buttonVariant={"ghost"}
-              onClick={() => navigate("/video-interview")} // Yeni ekran için route
+              onClick={() => navigate("/video-interview")}
               disbaled={false}
               buttonClassName="hover:text-sky-500"
               icon={<Sparkles />}

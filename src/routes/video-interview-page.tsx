@@ -28,16 +28,11 @@ export default function VideoInterviewPage() {
   const [userAnswer, setUserAnswer] = useState("");
   const navigate = useNavigate();
 
-  const {
-    interimResult,
-    isRecording: isSpeechRecording,
-    results,
-    startSpeechToText,
-    stopSpeechToText,
-  } = useSpeechToText({
-    continuous: true,
-    useLegacyResults: false,
-  });
+  const { interimResult, results, startSpeechToText, stopSpeechToText } =
+    useSpeechToText({
+      continuous: true,
+      useLegacyResults: false,
+    });
 
   const handleVideoEnd = () => setVideoEnded(true);
 

@@ -1,11 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 export default function AnalysisResultsPage() {
   const location = useLocation();
-  const [analysisResults, setAnalysisResults] = useState(
-    location.state?.analysisResults
-  );
+  const analysisResults = location.state?.analysisResults;
 
   useEffect(() => {
     if (!analysisResults) {
